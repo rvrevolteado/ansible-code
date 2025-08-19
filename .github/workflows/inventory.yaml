@@ -3,7 +3,7 @@ on:
 
 jobs:
   generate-inventory:
-    runs-on: [ robert-master ]
+    runs-on: [ self-hosted ]
 
     steps:
      
