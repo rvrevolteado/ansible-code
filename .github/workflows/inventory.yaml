@@ -3,7 +3,7 @@ on:
 
 jobs:
   generate-inventory:
-    runs-on: [ ansible-master ]
+    runs-on: [ robert-master ]
 
     steps:
      
