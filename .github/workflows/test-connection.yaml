@@ -5,7 +5,7 @@ on:
 
 jobs:
   test-ansible-connections:
-    runs-on: [ ansible-master ]
+    runs-on: [ self-hosted ]
 
     steps:
     
