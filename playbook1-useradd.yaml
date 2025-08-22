@@ -5,5 +5,5 @@
   - name: adding a user with uid
     user:
       name: ronny 
-      uid: 30015
+      uid: 30019
       state: present
