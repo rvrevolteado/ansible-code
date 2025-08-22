@@ -1,20 +1,24 @@
-name: Run Ansible Playbook
-on:
- push:
-   branches: [main]
- pull_request:
-   branches: [main]
- workflow_dispatch:
- 
+---    
+- name: understanding file module
+  hosts: db01
+  tasks:
+  - name: using file module
+    file:
+      path: /home/robert/file2.txt
+      owner: shruti
+      mode: 644
+      state: touch
 
-jobs:
-  ansible-playbook:
-    runs-on: [ self-hosted ]  # Change this if you're not using a self-hosted runner
+  - name: adding a line in the file
+    lineinfile:
+      name:  /home/robert/file2.txt
+      line:  lets learn the lineinfile module. 
+      state: present
 
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Execute Ansible Playbook
- 
-        run: |
-           ansible-playbook  playbook2-file-lineinfile-blockinfile.yaml -i /home/robert/ansible/inventory.yaml --become
+  - name: adding a block in  the file
+    blockinfile:
+      name:  /home/robert/file2.txt
+      block:  |
+         this is first line in additional block 
+         this is a second line of additional block of text
+      state: present
