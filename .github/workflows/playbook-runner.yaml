@@ -1,8 +1,11 @@
 name: Run Ansible Playbook
 on:
+ push:
+   branches: [main]
+ pull_request:
+   branches: [main]
  workflow_dispatch:
   
-
 jobs:
   ansible-playbook:
     runs-on: [ self-hosted ]  # Change this if you're not using a self-hosted runner
